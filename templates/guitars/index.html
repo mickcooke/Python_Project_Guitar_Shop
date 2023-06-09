@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block home %}
+
+<section>
+
+Here are my awesome guitars
+
+</section>
+{% for guitar in all_guitars %}
+<div>
+    <div>
+<p>{{guitar.name}}</p>
+<p>{{guitar.description}}</p>
+<p>{{guitar.stock}} in stock</p>
+<p>Cost price: {{guitar.buy_price}}</p>
+<p>Retail price: {{guitar.sell_price}}</p>
+<p>Maker: {{guitar.maker.name}} <i>(click to view)</i></p>
+
+    </div>
+
+</div>
+{% endfor %}
+
+{% endblock %}
