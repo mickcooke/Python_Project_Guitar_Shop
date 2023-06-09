@@ -20,3 +20,14 @@ def select_all():
         maker = Maker(result['name'], result['contact'], result['tel'], result['email'], result['active'], result['id'] )
         makers.append(maker)
     return makers
+
+def select(id):
+    maker = None
+    sql = "SELECT * FROM makers WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        maker = Maker(result['name'], result['contact'], result['tel'], result['email'], result['active'], result['id'] )
+    return maker
