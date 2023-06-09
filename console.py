@@ -18,5 +18,8 @@ guitar_repository.save(guitar1)
 guitar2 = Guitar("Fender Player Jazzmaster", "Shell Pink", 12, 9, 499.00, 799.00, maker2)
 guitar_repository.save(guitar2)
 
+makers = maker_repository.select_all()
+guitars = guitar_repository.select_all()
 
+pdb.set_trace()
 
