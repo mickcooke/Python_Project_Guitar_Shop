@@ -31,3 +31,7 @@ def select(id):
         result = results[0]
         maker = Maker(result['name'], result['contact'], result['tel'], result['email'], result['active'], result['id'] )
     return maker
+
+def delete_all():
+    sql = "DELETE FROM makers"
+    run_sql(sql)

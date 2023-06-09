@@ -23,3 +23,8 @@ def select_all():
         guitar = Guitar(result['name'], result['description'], result['stock'], result['min_stock'], result['buy_price'], result['sell_price'], maker, result['id'] )
         guitars.append(guitar)
     return guitars
+
+def delete_all():
+    sql = "DELETE FROM guitars"
+    run_sql(sql)
+    
