@@ -3,7 +3,7 @@
 
 Edit Guitars!
 
-<form action="/guitars/{{guitar.id}}" method="post">
+<form action="/guitars/update/{{guitar.id}}" method="post">
 <div>
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" value="{{guitar.name}}" required>
@@ -20,7 +20,7 @@ Edit Guitars!
 </div>
 
 <div>
-    <label for="min stock">Minimum stock number:</label>
+    <label for="min_stock">Minimum stock number:</label>
     <input type="text" id="min_stock" name="min_stock" value="{{guitar.min_stock}}" required autofocus>
 </div>
 
@@ -36,7 +36,7 @@ Edit Guitars!
 
 <div>
     <label for="maker">Maker:</label>
-    <select id="maker" name="maker_id">
+    <select id="maker_id" name="maker_id">
     {% for maker in all_makers %}
         <option value="{{ maker.id }}"
         {% if guitar.maker.id == maker.id %} selected="selected"{% endif %}>

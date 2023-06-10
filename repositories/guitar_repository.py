@@ -40,6 +40,13 @@ def select(id):
         guitar = Guitar(result['name'], result['description'], result['stock'], result['min_stock'], result['buy_price'], result['sell_price'], maker, result['id'] )
     return guitar
 
+def update(guitar):
+    sql = "UPDATE guitars SET (name, description, stock, min_stock, buy_price, sell_price, maker_id) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [guitar.name, guitar.description, guitar.stock, guitar.min_stock, guitar.buy_price, guitar.sell_price, guitar.maker.id, guitar.id]
+    run_sql(sql, values)
+
+
+
 
 
     
