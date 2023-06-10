@@ -1,21 +1,17 @@
 {% extends "base.html" %}
 {% block home %}
 
-<section>
 
-Here are my awesome guitars
-
-</section>
 {% for guitar in all_guitars %}
 <div>
     <div>
-        <hr>
-<p>{{guitar.name}}</p>
+        
+<p><b>{{guitar.name}}</b></p>
 <p>{{guitar.description}}</p>
 <p>{{guitar.stock}} in stock</p>
 <p>Cost price: &pound;{{"{:.2f}".format(guitar.buy_price)}}</p>
 <p>Retail price: &pound;{{"{:.2f}".format(guitar.sell_price)}}</p>
-<p>Maker: {{guitar.maker.name}} <i>(click to view)</i></p>
+<p>Maker: {{guitar.maker.name}}</p>
 
 <!-- Edit/delete button -->
     <form action="/guitars/edit/{{guitar.id}}" method="GET">
@@ -25,6 +21,7 @@ Here are my awesome guitars
     </div>
 
 </div>
+<hr>
 {% endfor %}
 
 {% endblock %}

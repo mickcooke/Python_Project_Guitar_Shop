@@ -45,6 +45,13 @@ def update(guitar):
     values = [guitar.name, guitar.description, guitar.stock, guitar.min_stock, guitar.buy_price, guitar.sell_price, guitar.maker.id, guitar.id]
     run_sql(sql, values)
 
+# DELETE a guitar
+def delete(id):
+    sql = "DELETE FROM guitars WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+
 
 
 
