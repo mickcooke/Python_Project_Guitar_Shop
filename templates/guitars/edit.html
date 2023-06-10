@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block home %}
+
+Edit Guitars!
+
+<form action="/guitars/{{guitar.id}}" method="post">
+<div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{guitar.name}}" required>
+</div>
+
+<div>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" value="{{guitar.description}}" required autofocus>
+</div>
+
+<div>
+    <label for="stock">No. in Stock:</label>
+    <input type="text" id="stock" name="stock" value="{{guitar.stock}}" required autofocus>
+</div>
+
+<div>
+    <label for="min stock">Minimum stock number:</label>
+    <input type="text" id="min_stock" name="min_stock" value="{{guitar.min_stock}}" required autofocus>
+</div>
+
+<div>
+    <label for="cost price">Cost price:</label>
+    <input type="text" id="buy_price" name="buy_price" value="{{guitar.buy_price}}" required autofocus>
+</div>
+
+<div>
+    <label for="retail price">Retail price:</label>
+    <input type="text" id="sell_price" name="sell_price" value="{{guitar.sell_price}}" required autofocus>
+</div>
+
+<div>
+    <label for="maker">Maker:</label>
+    <select id="maker" name="maker_id">
+    {% for maker in all_makers %}
+        <option value="{{ maker.id }}"
+        {% if guitar.maker.id == maker.id %} selected="selected"{% endif %}>
+        {{ maker.name }}
+        </option>
+    {% endfor %}
+    </select>
+</div>
+
+<button type="submit">Update Guitar</button>
+
+</form>
+
+{% endblock %}

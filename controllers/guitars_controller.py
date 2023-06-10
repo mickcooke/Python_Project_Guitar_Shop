@@ -16,3 +16,9 @@ def guitars():
 def makers():
     makers = maker_repository.select_all()
     return render_template("makers/index.html", all_makers = makers)
+
+@guitars_blueprint.route("/guitars/edit/<id>", methods=['GET'])
+def edit_guitar(id):
+    guitar = guitar_repository.select(id)
+    makers = maker_repository.select_all()
+    return render_template("guitars/edit.html", guitar = guitar, all_makers = makers)

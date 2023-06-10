@@ -6,19 +6,18 @@
 Here are my awesome Makers
 
 </section>
-<!-- {% for guitar in all_guitars %}
+{% for maker in all_makers %}
 <div>
     <div>
-<p>{{guitar.name}}</p>
-<p>{{guitar.description}}</p>
-<p>{{guitar.stock}} in stock</p>
-<p>Cost price: {{guitar.buy_price}}</p>
-<p>Retail price: {{guitar.sell_price}}</p>
-<p>Maker: {{guitar.maker.name}} <i>(click to view)</i></p>
+        <hr>
+<p><b>{{maker.name}}</b></p>
+<p>Contact: {{maker.contact}}</p>
+<p>Tel: {{maker.tel}}</p>
+<p>Email: {{maker.email}}</p>
 
     </div>
 
 </div>
-{% endfor %} -->
+{% endfor %}
 
 {% endblock %}

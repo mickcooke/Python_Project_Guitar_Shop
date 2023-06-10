@@ -27,4 +27,19 @@ def select_all():
 def delete_all():
     sql = "DELETE FROM guitars"
     run_sql(sql)
+
+def select(id):
+    guitar = None
+    sql = "SELECT * FROM guitars WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+
+    if results:
+        result = results[0]
+        maker = maker_repository.select(result['maker_id'])
+        guitar = Guitar(result['name'], result['description'], result['stock'], result['min_stock'], result['buy_price'], result['sell_price'], maker, result['id'] )
+    return guitar
+
+
+
     

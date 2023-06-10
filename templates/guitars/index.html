@@ -9,12 +9,18 @@ Here are my awesome guitars
 {% for guitar in all_guitars %}
 <div>
     <div>
+        <hr>
 <p>{{guitar.name}}</p>
 <p>{{guitar.description}}</p>
 <p>{{guitar.stock}} in stock</p>
-<p>Cost price: {{guitar.buy_price}}</p>
-<p>Retail price: {{guitar.sell_price}}</p>
+<p>Cost price: &pound;{{"{:.2f}".format(guitar.buy_price)}}</p>
+<p>Retail price: &pound;{{"{:.2f}".format(guitar.sell_price)}}</p>
 <p>Maker: {{guitar.maker.name}} <i>(click to view)</i></p>
+
+<!-- Edit/delete button -->
+    <form action="/guitars/edit/{{guitar.id}}" method="GET">
+    <input type="submit" value="Edit/Delete">
+    </form>
 
     </div>
 
