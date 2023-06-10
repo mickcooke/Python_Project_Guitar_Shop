@@ -25,13 +25,13 @@ Edit Guitars!
 </div>
 
 <div>
-    <label for="cost price">Cost price:</label>
-    <input type="text" id="buy_price" name="buy_price" value="{{guitar.buy_price}}" required autofocus>
+    <label for="cost price">Cost price: &pound;</label>
+    <input type="text" id="buy_price" name="buy_price" value="{{"{:.2f}".format(guitar.buy_price)}}" required autofocus>
 </div>
 
 <div>
-    <label for="retail price">Retail price:</label>
-    <input type="text" id="sell_price" name="sell_price" value="{{guitar.sell_price}}" required autofocus>
+    <label for="retail price">Retail price: &pound;</label>
+    <input type="text" id="sell_price" name="sell_price" value="{{"{:.2f}".format(guitar.sell_price)}}" required autofocus>
 </div>
 
 <div>
