@@ -12,9 +12,9 @@
         <img src="/static/images/guitaarrr_logo.png" class="center">
         <div>
             <nav>
-                <span>home</span>
-                <span>stock</span>
-                <span>makers</span>
+                <span><a href="{{ url_for('home') }}">home</a></span>
+                <span><a href="{{ url_for('guitars.guitars') }}">stock</a></span>
+                <span><a href="{{ url_for('guitars.makers') }}">makers</a></span>
                 
             </nav>
 

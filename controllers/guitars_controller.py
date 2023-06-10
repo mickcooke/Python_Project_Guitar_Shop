@@ -11,3 +11,8 @@ guitars_blueprint = Blueprint("guitars", __name__)
 def guitars():
     guitars = guitar_repository.select_all()
     return render_template("guitars/index.html", all_guitars = guitars)
+
+@guitars_blueprint.route("/makers")
+def makers():
+    makers = maker_repository.select_all()
+    return render_template("makers/index.html", all_makers = makers)
