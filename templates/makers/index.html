@@ -10,10 +10,16 @@
 <p>Contact: {{maker.contact}}</p>
 <p>Tel: {{maker.tel}}</p>
 <p>Email: {{maker.email}}</p>
-<hr>
+
+<!-- Edit/delete button -->
+<form action="/makers/edit/{{maker.id}}" method="GET">
+    <input type="submit" value="Edit/Delete">
+    </form>
+
     </div>
 
 </div>
+<hr>
 {% endfor %}
 
 {% endblock %}

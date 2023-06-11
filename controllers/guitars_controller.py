@@ -26,6 +26,12 @@ def edit_guitar(id):
     makers = maker_repository.select_all()
     return render_template("guitars/edit.html", guitar = guitar, all_makers = makers)
 
+# EDIT A MAKER 
+@guitars_blueprint.route("/makers/edit/<id>", methods=['GET'])
+def edit_maker(id):
+    maker = maker_repository.select(id)
+    return render_template("makers/edit.html", maker = maker)
+
 # UPDATE A GUITAR
 @guitars_blueprint.route("/guitars/update/<id>", methods=['POST'])
 def update_guitar(id):
@@ -43,9 +49,29 @@ def update_guitar(id):
     guitar_repository.update(guitar)
     return redirect('/guitars')
 
+# UPDATE A MAKER
+@guitars_blueprint.route("/makers/update/<id>", methods=['POST'])
+def update_maker(id):
+    name = request.form['name']
+    contact = request.form['contact']
+    tel = request.form['tel']
+    email = request.form['email']
+
+
+    maker = Maker(name, contact, tel, email, id)
+
+    maker_repository.update(maker)
+    return redirect('/makers')
+
 
 # DELETE guitar by id
 @guitars_blueprint.route("/guitars/delete/<id>", methods=['POST'])
 def delete_guitar(id):
     guitar_repository.delete(id)
     return redirect('/guitars')
+
+# DELETE Maker by id
+@guitars_blueprint.route("/makers/delete/<id>", methods=['POST'])
+def delete_maker(id):
+    maker_repository.delete(id)
+    return redirect('/makers')
