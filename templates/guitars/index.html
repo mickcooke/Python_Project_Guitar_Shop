@@ -1,14 +1,20 @@
 {% extends "base.html" %}
 {% block home %}
 
-
+<a href="/guitars/new">add new guitar</a></p>
 {% for guitar in all_guitars %}
 <div>
     <div>
         
 <p><b>{{guitar.name}}</b></p>
 <p>{{guitar.description}}</p>
+{% if guitar.stock == 0 %}
+<p style="color:red"><b>SOLD OUT!</b></p>
+{% elif guitar.stock <= guitar.min_stock %}
+<span>{{guitar.stock}} in stock</span><span style="color:red"> <b>STOCK LOW!</b></span>
+{% else %}
 <p>{{guitar.stock}} in stock</p>
+{% endif %}
 <p>Cost price: &pound;{{"{:.2f}".format(guitar.buy_price)}}</p>
 <p>Retail price: &pound;{{"{:.2f}".format(guitar.sell_price)}}</p>
 <p>Maker: {{guitar.maker.name}}</p>

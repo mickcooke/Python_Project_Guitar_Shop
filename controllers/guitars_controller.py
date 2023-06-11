@@ -13,11 +13,55 @@ def guitars():
     guitars = guitar_repository.select_all()
     return render_template("guitars/index.html", all_guitars = guitars)
 
+# NEW GUITAR PAGE
+@guitars_blueprint.route("/guitars/new", methods=['GET'])
+def new_guitar():
+    makers = maker_repository.select_all()
+    return render_template("guitars/new.html", all_makers = makers)
+
+#CREATE GUITAR
+@guitars_blueprint.route("/guitars", methods=['POST'])
+def create_guitar():
+    name = request.form['name']
+    description = request.form['description']
+    stock = request.form['stock']
+    min_stock = request.form['min_stock']
+    buy_price = request.form['buy_price']
+    sell_price = request.form['sell_price']
+    maker_id = request.form['maker_id']
+
+    maker = maker_repository.select(maker_id)
+    guitar = Guitar(name, description, stock, min_stock, buy_price, sell_price, maker)
+
+    guitar_repository.save(guitar)
+    return redirect('/guitars')
+
+
+
 # SHOW ALL MAKERS
 @guitars_blueprint.route("/makers")
 def makers():
     makers = maker_repository.select_all()
     return render_template("makers/index.html", all_makers = makers)
+
+# NEW MAKER PAGE
+@guitars_blueprint.route("/makers/new", methods=['GET'])
+def new_maker():
+    return render_template("makers/new.html")
+
+#CREATE MAKER
+@guitars_blueprint.route("/makers", methods=['POST'])
+def create_maker():
+    name = request.form['name']
+    contact = request.form['contact']
+    tel = request.form['tel']
+    email = request.form['email']
+    active = request.form['active']
+
+    maker = Maker(name, contact, tel, email, active)
+    maker_repository.save(maker)
+    return redirect('/makers')
+
 
 # EDIT A GUITAR 
 @guitars_blueprint.route("/guitars/edit/<id>", methods=['GET'])

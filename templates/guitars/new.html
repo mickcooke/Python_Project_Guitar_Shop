@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block home %}
+
+Add new guitars!
+
+<form action="/guitars" method="post">
+
+<div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Name" required>
+</div>
+
+<div>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" placeholder="Description" required autofocus>
+</div>
+
+<div>
+    <label for="stock">No. in Stock:</label>
+    <input type="number" id="stock" name="stock" placeholder="Stock number" required autofocus>
+</div>
+
+<div>
+    <label for="minimum stock">Minimum stock number:</label>
+    <input type="number" id="min_stock" name="min_stock" placeholder="Min. stock no." required autofocus>
+</div>
+
+<div>
+    <label for="cost price">Cost price: &pound;</label>
+    <input type="text" id="buy_price" name="buy_price" placeholder="Cost price" required autofocus>
+</div>
+
+<div>
+    <label for="retail price">Retail price: &pound;</label>
+    <input type="text" id="sell_price" name="sell_price" placeholder="Retail price" required autofocus>
+</div>
+
+<div>
+    <label for="maker">Maker:</label>
+    <select id="maker_id" name="maker_id">
+    {% for maker in all_makers %}
+        <option value="{{ maker.id }}">
+        {{ maker.name }}
+        </option>
+    {% endfor %}
+    </select>
+</div>
+
+
+<button type="submit">Add Guitar</button>
+
+</form>
+
+{% endblock %}
