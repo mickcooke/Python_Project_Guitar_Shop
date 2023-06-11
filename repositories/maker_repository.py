@@ -32,6 +32,17 @@ def select(id):
         maker = Maker(result['name'], result['contact'], result['tel'], result['email'], result['active'], result['id'] )
     return maker
 
+def update(maker):
+    sql = "UPDATE makers SET (name, contact, tel, email, active) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [maker.name, maker.contact, maker.tel, maker.email, maker.active, maker.id]
+    run_sql(sql, values)
+
+# DELETE a maker
+def delete(id):
+    sql = "DELETE FROM makers WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
 def delete_all():
     sql = "DELETE FROM makers"
     run_sql(sql)

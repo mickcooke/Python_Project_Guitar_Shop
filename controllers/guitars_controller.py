@@ -56,9 +56,10 @@ def update_maker(id):
     contact = request.form['contact']
     tel = request.form['tel']
     email = request.form['email']
+    active = "True"
 
 
-    maker = Maker(name, contact, tel, email, id)
+    maker = Maker(name, contact, tel, email, active, id)
 
     maker_repository.update(maker)
     return redirect('/makers')
