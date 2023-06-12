@@ -1,23 +1,26 @@
 {% extends "base.html" %}
 {% block home %}
 
-Add new guitars!
+
+<section class="guitar-container">
+
+<div class="new-guitar">
 
 <form action="/guitars" method="post">
 
 <div>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Name" required>
+    <textarea  id="name" name="name" rows="1" cols="35" placeholder="Name" required autofocus></textarea>
 </div>
 
 <div>
     <label for="description">Description:</label>
-    <input type="text" id="description" name="description" placeholder="Description" required autofocus>
+    <textarea id="description" name="description"  rows="3" cols="35" placeholder="Description" required autofocus></textarea>
 </div>
 
 <div>
     <label for="stock">No. in Stock:</label>
-    <input type="number" id="stock" name="stock" placeholder="Stock number" required autofocus>
+    <input type="number" size="1" id="stock" name="stock"  placeholder="Stock number" required autofocus>
 </div>
 
 <div>
@@ -51,5 +54,8 @@ Add new guitars!
 <button type="submit">Add Guitar</button>
 
 </form>
+</div>
+
+</section>
 
 {% endblock %}

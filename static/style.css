@@ -14,8 +14,30 @@ header {
 
 header > div > nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-right: 50px; 
 }
+
+.link-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+header > div > nav > span > a {
+    color: black;
+}
+
+header > div > nav > span > a:hover {
+    color: red;
+}
+
+header > div > nav > span > a:active {
+    color: red;
+}
+
 
 .center {
     display: block;
@@ -24,6 +46,8 @@ header > div > nav {
     width: 50%;
 }
 
+
+
 .guitar-container {
     display: flex;
     flex-wrap: wrap;
@@ -31,13 +55,72 @@ header > div > nav {
 }
 
 .guitar {
-    display: flex;
-    flex-direction: column;
-    width: 20vw;
-    background-color: #617073;
+    /* display: flex;
+    flex-direction: column; */
+    border: 1px solid black;
+    width: 200px;
+    background-color: #f3fceb;
     padding: 10px;
-    margin:20px;
+    margin:10px;
+    overflow-wrap: break-word;
 }
+
+.new-guitar {
+    /* display: flex;
+    flex-direction: column; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    border: 1px solid black;
+    background-color: #f3fceb;
+    padding: 10px;
+    margin:10px;
+    overflow-wrap: break-word;
+}
+
+.slogan {
+    font-family: 'Pirata One', cursive; 
+    font-size:xx-large;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+a {
+    text-decoration: None;
+    font-weight: 550;
+    color:black;
+}
+
+a:hover {
+    color: red;
+}
+
+.link-button {
+    background: none;
+    border: none;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 550;
+    
+}
+
+.link-button:hover {
+    color:red;
+}
+
+.link-button:focus {
+    outline: none;
+    color:red;
+}
+
+.link-button:active {
+    color:red;
+}
+
 
 
 /* .guitars {

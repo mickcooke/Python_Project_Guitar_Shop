@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block home %}
+<br>
+<div style="text-align:center;"><a href="/makers/new">add new maker</a></div>
 
-<a href="/makers/new">add new maker</a></p>
 
+<div class ="guitar-container">
 {% for maker in all_makers %}
-<div>
-    <div>
+<div class="guitar">
         
 <p><b>{{maker.name}}</b></p>
 <p>Contact: {{maker.contact}}</p>
@@ -24,9 +25,9 @@
     </form>
 
     </div>
-
+    {% endfor %}
 </div>
-<hr>
-{% endfor %}
+
+
 
 {% endblock %}
