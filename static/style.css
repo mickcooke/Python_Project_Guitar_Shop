@@ -23,3 +23,34 @@ header > div > nav {
     margin-right: auto;
     width: 50%;
 }
+
+.guitar-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.guitar {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    background-color: #617073;
+    padding: 10px;
+    margin:20px;
+}
+
+
+/* .guitars {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.guitar {
+    border: 1px solid #ccc;
+    width: 200px;
+    min-height: 68px;
+    padding: 10px;
+    line-height: 18px;
+    margin-bottom: 10px;
+} */

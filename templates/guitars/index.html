@@ -2,10 +2,11 @@
 {% block home %}
 
 <a href="/guitars/new">add new guitar</a></p>
+<section class="guitars">
 {% for guitar in all_guitars %}
-<div>
-    <div>
-        
+<div class="guitar">
+    
+    
 <p><b>{{guitar.name}}</b></p>
 <p>{{guitar.description}}</p>
 {% if guitar.stock == 0 %}
@@ -15,6 +16,7 @@
 {% else %}
 <p>{{guitar.stock}} in stock</p>
 {% endif %}
+<div></div>
 
 <p>Retail price: &pound;{{"{:.2f}".format(guitar.sell_price)}}</p>
 <p>Cost price: &pound;{{"{:.2f}".format(guitar.buy_price)}}</p>
@@ -30,7 +32,10 @@
     </div>
 
 </div>
-<hr>
+
+
+</section>
+
 {% endfor %}
 
 {% endblock %}
