@@ -11,6 +11,12 @@
 <p>Contact: {{maker.contact}}</p>
 <p>Tel: {{maker.tel}}</p>
 <p>Email: {{maker.email}}</p>
+{% if maker.active == False %}
+<p style="color:red;">MAKER INACTIVE!</p>
+{% endif %}
+
+
+
 
 <!-- Edit/delete button -->
 <form action="/makers/edit/{{maker.id}}" method="GET">

@@ -56,21 +56,21 @@ def create_maker():
     contact = request.form['contact']
     tel = request.form['tel']
     email = request.form['email']
-    active = request.form['active']
+    active = "True"
 
     maker = Maker(name, contact, tel, email, active)
     maker_repository.save(maker)
     return redirect('/makers')
 
 
-# EDIT A GUITAR 
+#  GUITAR EDIT PAGE 
 @guitars_blueprint.route("/guitars/edit/<id>", methods=['GET'])
 def edit_guitar(id):
     guitar = guitar_repository.select(id)
     makers = maker_repository.select_all()
     return render_template("guitars/edit.html", guitar = guitar, all_makers = makers)
 
-# EDIT A MAKER 
+#  MAKER EDIT PAGE 
 @guitars_blueprint.route("/makers/edit/<id>", methods=['GET'])
 def edit_maker(id):
     maker = maker_repository.select(id)
@@ -100,7 +100,7 @@ def update_maker(id):
     contact = request.form['contact']
     tel = request.form['tel']
     email = request.form['email']
-    active = "True"
+    active = request.form['active']
 
 
     maker = Maker(name, contact, tel, email, active, id)
