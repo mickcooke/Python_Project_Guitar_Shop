@@ -1,17 +1,25 @@
 {% extends "base.html" %}
 {% block home %}
 
-Edit Guitars!
+<br>
+<div style="text-align:center;">
+    <b>editing guitar</b>
+    </div>
+
+    <section class="guitar-container">
+
+        <div class="new-guitar">
 
 <form action="/guitars/update/{{guitar.id}}" method="post">
+
 <div>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="{{guitar.name}}" required>
+    <textarea  id="name" name="name" rows="1" cols="35" placeholder="Name" required>{{guitar.name}}</textarea>
 </div>
 
 <div>
     <label for="description">Description:</label>
-    <input type="text" id="description" name="description" value="{{guitar.description}}" required autofocus>
+    <textarea id="description" name="description"  rows="3" cols="35" required autofocus>{{guitar.description}}</textarea>
 </div>
 
 <div>
@@ -25,13 +33,13 @@ Edit Guitars!
 </div>
 
 <div>
-    <label for="cost price">Cost price: &pound;</label>
-    <input type="text" id="buy_price" name="buy_price" value="{{"{:.2f}".format(guitar.buy_price)}}" required autofocus>
+    <label for="cost price">Cost price:&nbsp; &pound;</label>
+    <input type="text" id="buy_price" name="buy_price" class="price-input" value="{{"{:.2f}".format(guitar.buy_price)}}" required autofocus>
 </div>
 
 <div>
     <label for="retail price">Retail price: &pound;</label>
-    <input type="text" id="sell_price" name="sell_price" value="{{"{:.2f}".format(guitar.sell_price)}}" required autofocus>
+    <input type="text" id="sell_price" name="sell_price" class="price-input" value="{{"{:.2f}".format(guitar.sell_price)}}" required autofocus>
 </div>
 
 <div>
@@ -46,13 +54,15 @@ Edit Guitars!
     </select>
 </div>
 
-<button type="submit" class="link-button">update guitar</button>
+<button type="submit">Update Guitar</button>
 </form>
 
 
 <form action="/guitars/delete/{{guitar.id}}" method="POST">
-    <input type="submit" value="delete guitar" class="link-button">
+    <input type="submit" value="Delete Guitar">
 </form>
+</div>
 
+</section>
 
 {% endblock %}

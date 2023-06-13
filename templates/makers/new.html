@@ -1,43 +1,44 @@
 {% extends "base.html" %}
 {% block home %}
 
-Add new makers!
+<br>
+<div style="text-align:center;">
+    <b>adding new maker</b>
+    </div>
+
+<section class="guitar-container">
+
+    <div class="new-guitar">
 
 <form action="/makers" method="post">
 
 <div>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Name" required>
+    <textarea  id="name" name="name" rows="1" cols="35" placeholder="Name" required autofocus></textarea>
 </div>
 
 <div>
     <label for="contact">Contact:</label>
-    <input type="text" id="contact" name="contact" placeholder="Contact" required autofocus>
+    <textarea type="text" id="contact" name="contact" rows="1" cols="35" placeholder="Contact" required autofocus></textarea>
 </div>
 
 <div>
-    <label for="telephone">Telephone:</label>
-    <input type="text" id="tel" name="tel" placeholder="Telephone no." required autofocus>
+    <label for="telephone">Phone number:</label>
+    <input type="text" id="tel" name="tel" class="tel-input" placeholder="Tel no." required autofocus>
 </div>
 
 <div>
-    <label for="email">Email address:</label>
-    <input type="text" id="email" name="email" placeholder="Email address" required autofocus>
+    <label for="email">Email address:&nbsp;</label>
+    <input type="text" id="email" name="email" class="tel-input"  placeholder="Email" required autofocus>
 </div>
 
-
-<!-- <div>
-    <label for="Active">Active:</label>
-    <select id="active" name="active">
-    <option value="true">Yes</option>
-    <option value="false">No</option>
-    </select>
-</div> -->
 
 
 <button type="submit">Add Maker</button>
 
 </form>
+</div>
+</section>
 
 {% endblock %}
 

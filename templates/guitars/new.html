@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block home %}
 
+<br>
+<div style="text-align:center;">
+    <b>adding new guitar</b>
+    </div>
 
 <section class="guitar-container">
 
@@ -29,13 +33,13 @@
 </div>
 
 <div>
-    <label for="cost price">Cost price: &pound;</label>
-    <input type="text" id="buy_price" name="buy_price" placeholder="Cost price" required autofocus>
+    <label for="cost price">Cost price: &nbsp; &pound;</label>
+    <input type="text" id="buy_price" class="price-input" name="buy_price" placeholder="Cost price" required autofocus>
 </div>
 
 <div>
     <label for="retail price">Retail price: &pound;</label>
-    <input type="text" id="sell_price" name="sell_price" placeholder="Retail price" required autofocus>
+    <input type="text" id="sell_price" class="price-input" name="sell_price" placeholder="Retail price" required autofocus>
 </div>
 
 <div>

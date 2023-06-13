@@ -122,6 +122,21 @@ a:hover {
 }
 
 
+input[type='number']{
+    width: 50px;
+} 
+
+.price-input {
+    width:80px;
+}
+
+.tel-input {
+    width:150px;
+}
+
+.stock-input {
+    width:50px;
+}
 
 /* .guitars {
     display: flex;
