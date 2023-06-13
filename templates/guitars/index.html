@@ -5,18 +5,35 @@
 <div class="link-container">
 <span><a href="/guitars/new">add new guitar</a></span>
 
+<span><a href="/guitars">all guitars</a></span>
+
 <!--FILTER BY MAKER-->
-<span> Filter by Maker:
-    {% for maker in all_makers %}
-    <a href="/guitars/filterbymaker/{{maker.id}}">{{maker.name}}</a>
+<span>
+    <form action="/guitars/filterbymaker" method="post">
+        <label for="maker"><b>filter by maker:</b></label>
+        <select id="maker_id" name="maker_id">
+        {% for maker in all_makers %}
+            <option value="{{ maker.id }}">
+            {{ maker.name }}
+            </option>
         {% endfor %}
         </select>
+
+        <button type="submit">Go</button>
     </form>
     </span>
     </div>
 
 
+    {% if all_guitars|length == 0 %}
+    <div style="text-align:center;"><h2>No Items to Display</h2></div>
+        {% else %}
+
     <div class="guitar-container">
+
+
+
+
 {% for guitar in all_guitars %}
 <div class="guitar">
         
@@ -45,7 +62,7 @@
     {% endfor %}
 
 </div>
-
+{% endif %}
 
 
 {% endblock %}

@@ -123,15 +123,18 @@ def delete_maker(id):
     return redirect('/makers')
 
 # FILTER GUITAR BY MAKER
-@guitars_blueprint.route("/guitars/filterbymaker/<id>", methods=['GET'])
-def filter_by_maker(id):
+@guitars_blueprint.route("/guitars/filterbymaker", methods=['POST'])
+def filter_by_maker():
+    id = int(request.form['maker_id'])
     guitars = guitar_repository.select_all()
     selected_guitars = []
+    makers = maker_repository.select_all()
 
     for guitar in guitars:
         if guitar.maker.id == id:
             selected_guitars.append(guitar)
 
-    return render_template("guitars/filterbymaker.html", guitars = selected_guitars)
+
+    return render_template("guitars/index.html", all_guitars = selected_guitars, all_makers = makers)
 
     
