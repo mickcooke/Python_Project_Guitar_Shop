@@ -79,14 +79,7 @@ header > div > nav > span > a:active {
     overflow-wrap: break-word;
 }
 
-.slogan {
-    font-family: 'Pirata One', cursive; 
-    font-size:xx-large;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-}
+
 
 a {
     text-decoration: None;
@@ -147,17 +140,20 @@ input[type='number']{
     width:110px;
 }
 
-/* .guitars {
+.homepage {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 50px;
 }
 
-.guitar {
-    border: 1px solid #ccc;
-    width: 200px;
-    min-height: 68px;
-    padding: 10px;
-    line-height: 18px;
-    margin-bottom: 10px;
-} */
+
+.slogan {
+    font-family: 'Pirata One', cursive; 
+    font-size:xx-large;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+}
