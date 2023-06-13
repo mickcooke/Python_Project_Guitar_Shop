@@ -123,19 +123,28 @@ a:hover {
 
 
 input[type='number']{
-    width: 50px;
+    width: 70px;
 } 
 
 .price-input {
     width:80px;
 }
 
+.price-edit {
+    width:80px;
+}
+
+
 .tel-input {
     width:150px;
 }
 
+.email {
+    width: 214px;
+}
+
 .stock-input {
-    width:50px;
+    width:110px;
 }
 
 /* .guitars {

@@ -4,8 +4,17 @@
 
 <div class="link-container">
 <span><a href="/guitars/new">add new guitar</a></span>
-<span><a href="/filter">filter by maker</a></span>
-</div>
+
+<!--FILTER BY MAKER-->
+<span> Filter by Maker:
+    {% for maker in all_makers %}
+    <a href="/guitars/filterbymaker/{{maker.id}}">{{maker.name}}</a>
+        {% endfor %}
+        </select>
+    </form>
+    </span>
+    </div>
+
 
     <div class="guitar-container">
 {% for guitar in all_guitars %}

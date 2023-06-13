@@ -11,7 +11,8 @@ guitars_blueprint = Blueprint("guitars", __name__)
 @guitars_blueprint.route("/guitars")
 def guitars():
     guitars = guitar_repository.select_all()
-    return render_template("guitars/index.html", all_guitars = guitars)
+    makers = maker_repository.select_all()
+    return render_template("guitars/index.html", all_guitars = guitars, all_makers = makers)
 
 # NEW GUITAR PAGE
 @guitars_blueprint.route("/guitars/new", methods=['GET'])
@@ -120,3 +121,17 @@ def delete_guitar(id):
 def delete_maker(id):
     maker_repository.delete(id)
     return redirect('/makers')
+
+# FILTER GUITAR BY MAKER
+@guitars_blueprint.route("/guitars/filterbymaker/<id>", methods=['GET'])
+def filter_by_maker(id):
+    guitars = guitar_repository.select_all()
+    selected_guitars = []
+
+    for guitar in guitars:
+        if guitar.maker.id == id:
+            selected_guitars.append(guitar)
+
+    return render_template("guitars/filterbymaker.html", guitars = selected_guitars)
+
+    

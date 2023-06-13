@@ -1,27 +1,35 @@
 {% extends "base.html" %}
 {% block home %}
 
-Edit Maker!
+<br>
+<div style="text-align:center;">
+    <b>editing maker</b>
+    </div>
+
+    <section class="guitar-container">
+
+        <div class="new-guitar">
 
 <form action="/makers/update/{{maker.id}}" method="post">
+
 <div>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="{{maker.name}}" required>
+    <textarea  id="name" name="name" rows="1" cols="35" required>{{maker.name}}</textarea>
 </div>
 
 <div>
     <label for="contact">Contact:</label>
-    <input type="text" id="contact" name="contact" value="{{maker.contact}}" required>
+    <textarea id="contact" name="contact" rows="1" cols="35" required autofocus>{{maker.contact}}</textarea>
 </div>
 
 <div>
-    <label for="telephone">Tel:</label>
-    <input type="text" id="tel" name="tel" value="{{maker.tel}}" required autofocus>
+    <label for="telephone">Phone number:</label>
+    <input type="text" id="tel" name="tel" class="tel-input" value="{{maker.tel}}" required autofocus>
 </div>
 
 <div>
     <label for="email">Email:</label>
-    <input type="text" id="email" name="email" value="{{maker.email}}" required autofocus>
+    <input type="text" id="email" name="email" class="email" value="{{maker.email}}" required autofocus>
 </div>
 
 <div>
@@ -44,9 +52,13 @@ Edit Maker!
 
 <button type="submit">Update Maker</button>
 </form>
+    
 
 <form action="/makers/delete/{{maker.id}}" method="POST">
     <input type="submit" value="Delete Maker">
 </form>
+
+</div>
+</section>
 
 {% endblock %}
