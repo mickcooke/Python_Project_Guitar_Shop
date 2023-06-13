@@ -1,16 +1,28 @@
 {% extends "base.html" %}
 {% block home %}
+<header>
+    <div>
+        <nav>
+            
+            <span><a href="{{ url_for('home') }}">home</a></span>
+            <span><a href="{{ url_for('guitars.guitars') }}" style="color:red">guitars</a></span>
+            <span><a href="{{ url_for('guitars.makers') }}">makers</a></span>
+            
+        </nav>
+    </div>
+</header>
+
+
 <br>
-
 <div class="link-container">
-<span><a href="/guitars/new">add new guitar</a></span>
+<span><a href="/guitars/new">add guitar</a></span>
 
-<span><a href="/guitars">all guitars</a></span>
+<span><a href="/guitars">show all</a></span>
 
-<!--FILTER BY MAKER-->
+<!--FILTER GUITAR BY MAKER-->
 <span>
     <form action="/guitars/filterbymaker" method="post">
-        <label for="maker"><b>filter by maker:</b></label>
+        <label for="maker"><b>filter:</b></label>
         <select id="maker_id" name="maker_id">
         {% for maker in all_makers %}
             <option value="{{ maker.id }}">

@@ -1,7 +1,20 @@
 {% extends "base.html" %}
 {% block home %}
+<header>
+    <div>
+        <nav>
+            
+            <span><a href="{{ url_for('home') }}">home</a></span>
+            <span><a href="{{ url_for('guitars.guitars') }}">guitars</a></span>
+            <span><a href="{{ url_for('guitars.makers') }}" style="color:red">makers</a></span>
+            
+        </nav>
+    </div>
+</header>
+
+
 <br>
-<div style="text-align:center;"><a href="/makers/new">add new maker</a></div>
+<div style="text-align:center;"><a href="/makers/new">add maker</a></div>
 
 
 <div class ="guitar-container">

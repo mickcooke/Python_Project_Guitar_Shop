@@ -1,11 +1,24 @@
 {% extends "base.html" %}
 {% block home %}
+
+<header>
+    <div>
+        <nav>
+            
+            <span><a href="{{ url_for('home') }}" style="color:red">home</a></span>
+            <span><a href="{{ url_for('guitars.guitars') }}">guitars</a></span>
+            <span><a href="{{ url_for('guitars.makers') }}">makers</a></span>
+            
+        </nav>
+    </div>
+</header>
+
+
 <br>
 <section class="homepage">
 <div>
     <img src ="/static/images/ralph_pirate.PNG" alt="pirate guitarist" width="200">
 </div>
-
 <div>
     <p class="slogan">Serving Landlubbers since 1685</p>
 </div>
