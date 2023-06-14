@@ -1,4 +1,5 @@
-"Guitaarrr Shop Inventory" by Mick Cooke, June 2023
+"Guitaarrr Shop Inventory," an app by Mick Cooke, June 2023.
+Created using Python.
 
 WELCOME
 
@@ -9,10 +10,14 @@ RUNNING INSTRUCTIONS
 
 You will need both psycopg2 and Flask installed to run this app. 
 
-Type into Terminal:
+Download all files.
+In Terminal, navigate into the folder python_project
+
+Then type into Terminal:
 
 dropbd guitar_manager
 createdb guitar_manager
+psql -d guitar_manager -f db/guitar_manager.sql
 psql -d guitar_manager -f db/guitar_manager.sql
 python3 console.py
 flask run
