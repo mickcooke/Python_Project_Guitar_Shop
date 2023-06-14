@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block home %}
+
+<!-- NAVIGATION -->
 <header>
     <div>
         <nav>
@@ -15,26 +17,25 @@
 
 <br>
 <div class="link-container">
-<span><a href="/guitars/new">add guitar</a></span>
-
-<span><a href="/guitars">show all</a></span>
+    <span><a href="/guitars/new">add guitar</a></span>
+    <span><a href="/guitars">show all</a></span>
 
 <!--FILTER GUITAR BY MAKER-->
-<span>
-    <form action="/guitars/filterbymaker" method="post">
-        <label for="maker"><b>filter:</b></label>
-        <select id="maker_id" name="maker_id">
-        {% for maker in all_makers %}
-            <option value="{{ maker.id }}">
-            {{ maker.name }}
-            </option>
-        {% endfor %}
-        </select>
+    <span>
+        <form action="/guitars/filterbymaker" method="post">
+            <label for="maker"><b>filter:</b></label>
+            <select id="maker_id" name="maker_id">
+                {% for maker in all_makers %}
+                    <option value="{{ maker.id }}">
+                    {{ maker.name }}
+                    </option>
+                {% endfor %}
+            </select>
 
-        <button type="submit">Go</button>
-    </form>
+            <button type="submit">Go</button>
+        </form>
     </span>
-    </div>
+</div>
 
 
     {% if all_guitars|length == 0 %}
