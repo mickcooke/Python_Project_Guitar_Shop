@@ -18,5 +18,5 @@ CREATE TABLE guitars (
     min_stock INT,
     buy_price FLOAT,
     sell_price FLOAT,
-    maker_id INT NOT NULL REFERENCES makers(id)
+    maker_id INT NOT NULL REFERENCES makers(id) ON DELETE CASCADE
 );
