@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block home %}
+
+<!-- NAVIGATION -->
 <header>
     <div>
         <nav>
@@ -14,31 +16,35 @@
 
 
 <br>
-<div style="text-align:center;"><a href="/makers/new">add maker</a></div>
+    <div style="text-align:center;"><a href="/makers/new">add maker</a></div>
 
-
+<!-- CONTAINER FOR GUITARS -->
 <div class ="guitar-container">
-{% for maker in all_makers %}
-<div class="guitar">
+
+
+<!-- EACH GUITAR -->
+        {% for maker in all_makers %}
+            
+            <div class="guitar">
         
-<p><b>{{maker.name}}</b></p>
-<p>Contact: {{maker.contact}}</p>
-<p>Tel: {{maker.tel}}</p>
-<p>Email: {{maker.email}}</p>
-{% if maker.active == False %}
-<p style="color:red;">MAKER INACTIVE!</p>
-{% endif %}
+                <p><b>{{maker.name}}</b></p>
+                <p>Contact: {{maker.contact}}</p>
+                <p>Tel: {{maker.tel}}</p>
+                <p>Email: {{maker.email}}</p>
+                {% if maker.active == False %}
+                    <p style="color:red;">MAKER INACTIVE!</p>
 
+        {% endif %}
 
+            <!-- Edit/delete button -->
+            <form action="/makers/edit/{{maker.id}}" method="GET">
+                <input type="submit" value="Edit/Delete">
+            </form>
 
+            </div>
+        
+        {% endfor %}
 
-<!-- Edit/delete button -->
-<form action="/makers/edit/{{maker.id}}" method="GET">
-    <input type="submit" value="Edit/Delete">
-    </form>
-
-    </div>
-    {% endfor %}
 </div>
 
 
