@@ -55,8 +55,6 @@ header > div > nav > span > a:active {
 }
 
 .guitar {
-    /* display: flex;
-    flex-direction: column; */
     border: 1px solid black;
     width: 200px;
     background-color: #f3fceb;
@@ -66,8 +64,6 @@ header > div > nav > span > a:active {
 }
 
 .new-guitar {
-    /* display: flex;
-    flex-direction: column; */
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -143,20 +139,24 @@ input[type='number']{
 .homepage {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: 100px;
+    justify-content: space-around;
+}
 
+.homepage_image {
+    border: none;
+    width: 200px;
+    padding: 10px;
+    margin:10px;
+    overflow-wrap: break-word;
 }
 
 
 .slogan {
     font-family: 'Pirata One', cursive; 
     font-size:xx-large;
-    display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 70%;
     text-align: center;
-    margin-left: 0;
-    margin-right: 0;
+
 }

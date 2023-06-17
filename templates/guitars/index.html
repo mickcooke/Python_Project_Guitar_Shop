@@ -39,43 +39,45 @@
 
 
     {% if all_guitars|length == 0 %}
-    <div style="text-align:center;"><h2>No Items to Display</h2></div>
-        {% else %}
-
-    <div class="guitar-container">
-
-
-
-
-{% for guitar in all_guitars %}
-<div class="guitar">
+        <div style="text-align:center;">
+            <h2>No Items to Display</h2>
+        </div>
+    {% else %}
+    
         
-<p><b>{{guitar.name}}</b></p>
-<p>{{guitar.description}}</p>
-{% if guitar.stock == 0 %}
-<p style="color:red"><b>SOLD OUT!</b></p>
-{% elif guitar.stock <= guitar.min_stock %}
-<span>{{guitar.stock}} in stock</span><span style="color:red"> <b>STOCK LOW!</b></span>
-{% else %}
-<p>{{guitar.stock}} in stock</p>
-{% endif %}
+    
+<div class="guitar-container">
 
-<p>Retail price: &pound;{{"{:.2f}".format(guitar.sell_price)}}</p>
-<p>Cost price: &pound;{{"{:.2f}".format(guitar.buy_price)}}</p>
 
-<p>Markup: &pound;{{ "{:.2f}".format(guitar.sell_price - guitar.buy_price) }}</p>
-<p>Maker: {{guitar.maker.name}}</p>
+    {% for guitar in all_guitars %}
+        <div class="guitar">
+            <p><b>{{guitar.name}}</b></p>
+            <p>{{guitar.description}}</p>
 
-<!-- Edit/delete button -->
-    <form action="/guitars/edit/{{guitar.id}}" method="GET" >
-    <input type="submit" value="Edit/Delete">
-    </form>
+            {% if guitar.stock == 0 %}
+                <p style="color:red"><b>SOLD OUT!</b></p>
+            {% elif guitar.stock <= guitar.min_stock %}
+                <span>{{guitar.stock}} in stock</span><span style="color:red"> <b>STOCK LOW!</b></span>
+            {% else %}
+                <p>{{guitar.stock}} in stock</p>
+            {% endif %}
 
-    </div>
+            <p>Retail price: &pound;{{"{:.2f}".format(guitar.sell_price)}}</p>
+            <p>Cost price: &pound;{{"{:.2f}".format(guitar.buy_price)}}</p>
+
+            <p>Markup: &pound;{{ "{:.2f}".format(guitar.sell_price - guitar.buy_price) }}</p>
+            <p>Maker: {{guitar.maker.name}}</p> 
+
+            <!-- Edit/delete button -->
+            <form action="/guitars/edit/{{guitar.id}}" method="GET" >
+                <input type="submit" value="Edit/Delete">
+            </form> 
+
+        </div>
     {% endfor %}
 
 </div>
-{% endif %}
 
+{% endif %}
 
 {% endblock %}
