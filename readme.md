@@ -1,6 +1,8 @@
 "Guitaarrr Shop Inventory," an app by Mick Cooke, June 2023.
 Created using Python.
 
+<img width="1245" alt="Guitaarrr Homepage Screenshot" src="https://github.com/mickcooke/Python_Project_Guitar_Shop/blob/main/assets/Guitaarrr%20Hompage.jpg">
+
 WELCOME
 
 Welcome to my Python project, made as part of the 16 week CodeClan Software Development bootcamp. I have made a shop inventory for an imaginary guitar shop, the pirate-themed 'guitaarrr!'.
