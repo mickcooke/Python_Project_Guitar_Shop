@@ -67,5 +67,10 @@ TECHNOLOGIES USED
 
 This project was written using Python, pSQL, HTML, CSS and Jinja. 
 
+<img width="1245" alt="Guitaarrr Homepage Screenshot" src="https://github.com/mickcooke/Python_Project_Guitar_Shop/blob/main/assets/Guitaarrr%20Guitar%20Page%20Screenshot.jpg">
+<img width="1245" alt="Guitaarrr Homepage Screenshot" src="https://github.com/mickcooke/Python_Project_Guitar_Shop/blob/main/assets/Guitaarrr%20Makers%20Screenshot.jpg">
+
+
+
 
 
